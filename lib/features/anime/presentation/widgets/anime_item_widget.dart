@@ -18,7 +18,11 @@ class AnimeItemWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset(animeModel.image, height: 26.h),
+                child: Image.asset(
+                  animeModel.image,
+                  height: 28.h,
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                 top: 10,

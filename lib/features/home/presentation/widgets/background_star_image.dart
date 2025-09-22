@@ -10,10 +10,13 @@ class BackgroundStarImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.topRight,
-      child: Image.asset(
-        AppAssets.imagesTheStar,
-        height: 40.h,
-        fit: BoxFit.fill,
+      child: Transform.scale(
+        scale: 1.2,
+        child: Image.asset(
+          AppAssets.imagesTheStar,
+          height: 38.h,
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }

@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 51.h,
+            height: 60.h,
             child: Stack(
               children: [
                 const BackgroundStarImage(),
@@ -24,14 +24,13 @@ class HomeView extends StatelessWidget {
                   top: 7.h,
                   left: 5.w,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Where Anime Comes Alive",
                         style: AppStyles.style22Bold,
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 16),
                       const FilterItemListViewBuilder(),
                       const SizedBox(height: 20),
                       const AnimeListViewBuilder(),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -11,7 +10,7 @@ class AnimeListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40.h,
+      height: 35.h,
       width: 95.w,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

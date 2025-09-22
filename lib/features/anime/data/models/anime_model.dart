@@ -23,7 +23,7 @@ class AnimeModel {
     AnimeModel(
       image: AppAssets.imagesHunterxhutner,
       name: "Hunter x Hunter",
-      kind: "Action",
+      kind: "Adventure",
       rating: 10.0,
     ),
     AnimeModel(
@@ -35,7 +35,7 @@ class AnimeModel {
     AnimeModel(
       image: AppAssets.imagesHunterxhutner,
       name: "Hunter x Hunter",
-      kind: "Action",
+      kind: "Adventure",
       rating: 10.0,
     ),
     AnimeModel(
@@ -47,7 +47,7 @@ class AnimeModel {
     AnimeModel(
       image: AppAssets.imagesHunterxhutner,
       name: "Hunter x Hunter",
-      kind: "Action",
+      kind: "Adventure",
       rating: 10.0,
     ),
     AnimeModel(
@@ -59,7 +59,7 @@ class AnimeModel {
     AnimeModel(
       image: AppAssets.imagesHunterxhutner,
       name: "Hunter x Hunter",
-      kind: "Action",
+      kind: "Adventure",
       rating: 10.0,
     ),
   ];
