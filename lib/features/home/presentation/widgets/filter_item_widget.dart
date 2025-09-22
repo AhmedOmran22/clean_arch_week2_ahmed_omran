@@ -4,8 +4,13 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
 class FilterItemWidget extends StatelessWidget {
-  const FilterItemWidget({super.key});
-  
+  const FilterItemWidget({
+    super.key,
+    required this.isSelected,
+    required this.title,
+  });
+  final bool isSelected;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -13,12 +18,14 @@ class FilterItemWidget extends StatelessWidget {
       margin: const EdgeInsets.only(right: 4),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       decoration: BoxDecoration(
-        color: AppColors.primaryColor,
+        color: isSelected ? AppColors.primaryColor : Colors.white,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Text(
-        "all",
-        style: AppStyles.style14Bold.copyWith(color: Colors.white),
+        title,
+        style: AppStyles.style14Bold.copyWith(
+          color: isSelected ? Colors.white : AppColors.primaryColor,
+        ),
       ),
     );
   }

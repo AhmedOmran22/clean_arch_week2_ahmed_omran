@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -10,11 +9,11 @@ class BackgroundStarImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.centerRight,
+      alignment: Alignment.topRight,
       child: Image.asset(
         AppAssets.imagesTheStar,
         height: 40.h,
-        fit: BoxFit.contain,
+        fit: BoxFit.fill,
       ),
     );
   }

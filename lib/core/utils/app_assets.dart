@@ -2,9 +2,13 @@
 class AppAssets {
   AppAssets._();
   
+  static const String imagesConan = "assets/images/conan.png";
+
   static const String imagesFilter = "assets/images/filter.svg";
 
   static const String imagesHome = "assets/images/home.svg";
+
+  static const String imagesHunterxhutner = "assets/images/hunterxhutner.png";
 
   static const String imagesPngStar = "assets/images/png_star.png";
 
