@@ -40,39 +40,42 @@ class _CustomBottomNavigationBarWidgetState
   ];
   @override
   Widget build(BuildContext context) {
-    return StylishBottomBar(
-      option: BubbleBarOptions(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 4),
-        barStyle: BubbleBarStyle.horizontal,
-        bubbleFillStyle: BubbleFillStyle.fill,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: StylishBottomBar(
+        elevation: 0,
+        option: BubbleBarOptions(
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 2),
+          barStyle: BubbleBarStyle.horizontal,
+          bubbleFillStyle: BubbleFillStyle.fill,
+        ),
+        backgroundColor: AppColors.scaffoldBackgroundColor,
+        items: List.generate(bottomNavigationBarItems.length, (index) {
+          return BottomBarItem(
+            backgroundColor: AppColors.primaryColor,
+            icon: BottomNavigationBarItemWidget(
+              svgImage: bottomNavigationBarItems[index].svgImage,
+              color: Colors.grey,
+            ),
+            selectedIcon: BottomNavigationBarItemWidget(
+              svgImage: bottomNavigationBarItems[index].svgImage,
+              color: Colors.white,
+            ),
+            selectedColor: Colors.white,
+            title: Text(
+              bottomNavigationBarItems[index].title,
+              style: const TextStyle(color: Colors.white),
+            ),
+          );
+        }),
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+            widget.onItemTapped(index);
+          });
+        },
       ),
-      backgroundColor: AppColors.scaffoldBackgroundColor,
-      items: List.generate(bottomNavigationBarItems.length, (index) {
-        return BottomBarItem(
-          backgroundColor: AppColors.primaryColor,
-          icon: BottomNavigationBarItemWidget(
-            svgImage: bottomNavigationBarItems[index].svgImage,
-            color: Colors.grey,
-          ),
-          selectedIcon: BottomNavigationBarItemWidget(
-            svgImage: bottomNavigationBarItems[index].svgImage,
-            color: Colors.white,
-          ),
-          selectedColor: Colors.white,
-          title: Text(
-            bottomNavigationBarItems[index].title,
-            style: const TextStyle(color: Colors.white),
-          ),
-        );
-      }),
-      currentIndex: selectedIndex,
-      onTap: (index) {
-        setState(() {
-          selectedIndex = index;
-          widget.onItemTapped(index);
-        });
-      },
-      elevation: 8,
     );
   }
 }

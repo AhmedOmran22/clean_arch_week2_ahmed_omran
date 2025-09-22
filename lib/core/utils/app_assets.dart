@@ -6,9 +6,15 @@ class AppAssets {
 
   static const String imagesHome = "assets/images/home.svg";
 
+  static const String imagesPngStar = "assets/images/png_star.png";
+
   static const String imagesSearch = "assets/images/search.svg";
 
   static const String imagesSettings = "assets/images/settings.svg";
+
+  static const String imagesStar = "assets/images/star.svg";
+
+  static const String imagesTheStar = "assets/images/the_star.png";
 
   static const String imagesWorld = "assets/images/world.svg";
 }

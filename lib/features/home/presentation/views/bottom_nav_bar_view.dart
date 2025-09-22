@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_bottom_navigation_bar_widget.dart';
+import 'home_view.dart';
 
 class BottomNavBarView extends StatefulWidget {
   const BottomNavBarView({super.key});
@@ -12,18 +13,12 @@ class BottomNavBarView extends StatefulWidget {
 class _BottomNavBarViewState extends State<BottomNavBarView> {
   int selectedIndex = 0;
 
-  final List<Widget> _pages = const [
-    Center(child: Text("🏠 Home", style: TextStyle(fontSize: 24))),
-    Center(child: Text("🔍 Search", style: TextStyle(fontSize: 24))),
-    Center(child: Text("❤️ Likes", style: TextStyle(fontSize: 24))),
-    Center(child: Text("👤 Profile", style: TextStyle(fontSize: 24))),
-    Center(child: Text("⚙️ Settings", style: TextStyle(fontSize: 24))),
-  ];
+  final List<Widget> _pages = [const HomeView()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[selectedIndex],
+      body: _pages[0],
       bottomNavigationBar: CustomBottomNavigationBarWidget(
         onItemTapped: (index) {
           setState(() {
