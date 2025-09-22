@@ -14,6 +14,8 @@ class AppAssets {
 
   static const String imagesNaruto = "assets/images/naruto.png";
 
+  static const String imagesPerview = "assets/images/perview.svg";
+
   static const String imagesPngStar = "assets/images/png_star.png";
 
   static const String imagesSearch = "assets/images/search.svg";
@@ -23,6 +25,8 @@ class AppAssets {
   static const String imagesStar = "assets/images/star.svg";
 
   static const String imagesTheStar = "assets/images/the_star.png";
+
+  static const String imagesWatch = "assets/images/watch.svg";
 
   static const String imagesWorld = "assets/images/world.svg";
 }
