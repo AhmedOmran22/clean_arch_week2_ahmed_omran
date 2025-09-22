@@ -24,9 +24,13 @@ abstract class AppStyles {
     fontSize: 12,
     fontWeight: FontWeight.w900,
   );
-  static TextStyle style16Medium = const TextStyle(
+  static TextStyle style16Regular = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
   static TextStyle style12Regular = const TextStyle(fontSize: 12);
+  static TextStyle style24Bold = const TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  );
 }

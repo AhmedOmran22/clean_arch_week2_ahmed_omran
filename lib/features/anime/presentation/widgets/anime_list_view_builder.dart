@@ -10,9 +10,10 @@ class AnimeListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 35.h,
+      height: 40.h,
       width: 95.w,
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: AnimeModel.dummyAnimeData.length,
         itemBuilder: (context, index) {
