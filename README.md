@@ -76,6 +76,39 @@ lib/
           upgrade_plan_list_view_builder.dart
 ```
 
+## Anime Feature Architecture (Focused Example)
+This section explains just one feature—`anime/`—as a concrete example of the project’s architecture. No networking or API layer is involved here; it’s all local models and UI.
+
+### Structure
+- `features/anime/data/models/anime_model.dart`
+  - Local data model used to represent anime items for lists and UI previews.
+- `features/anime/presentation/views/anime_details_view.dart`
+  - The main screen for displaying a single anime’s details.
+- `features/anime/presentation/widgets/`
+  - `anime_image_and_logo_widget.dart`: Top hero section using a `Stack` to show the banner image and floating logo.
+  - `anime_labels_row_widget.dart`: Label chips/tags (e.g., kind, rating). [If present in your codebase]
+  - `anime_icons_with_text_row_widget.dart` and `icon_with_text_widget.dart`: Reusable row with small icon + text pairs (e.g., eye icon and views count).
+  - `anime_description_widget.dart`: Brief descriptive text with a small icon header.
+  - `custom_bottom_navigation_barr_buttons_widget.dart`: Bottom actions (e.g., Preview / Watch Now) that can navigate elsewhere (like Upgrade Plan).
+
+### Flow
+1) `AnimeDetailsView` lays out the page as a scrollable column.
+   - Top area: `AnimeImageAndLogoWidget` with a `Stack` that shows `AppAssets.imagesDemonSlayer` and a floating `AppAssets.imagesDemonLogo`.
+   - Middle: Labels row, dividers, and an icon-with-text row for quick stats.
+   - Bottom: `AnimeDescriptionWidget` shows a concise description with an accompanying `AppAssets.imagesFire` icon.
+2) Bottom actions are provided via `CustomBottomNavigationBarButtonsWidget` (from anime widgets), which internally composes `CustomActionButtonWidget` from `core/widgets/`.
+3) Navigation to other screens (e.g., Upgrade Plan) is performed using named routes (`Navigator.pushNamed(context, AppRoutes.upgradePlan)`), keeping navigation concerns decoupled from view construction.
+
+### UI Considerations
+- Sizing: Uses `sizer` (e.g., `65.h`, `100.w`) for responsive height/width.
+- Assets: Icons and images are centralized in `core/utils/app_assets.dart` and used via `Image.asset` and `SvgPicture.asset`.
+- Clipping: Widgets that intentionally overflow (like the floating logo) use `Stack(clipBehavior: Clip.none)` to avoid clipping issues.
+- Reusability: Common text styles come from `core/utils/app_styles.dart`, and common components like dividers and action buttons live in `core/widgets/`.
+
+### Extending the Feature
+- Add a new UI element: Create a dedicated widget under `features/anime/presentation/widgets/` and compose it in `AnimeDetailsView`.
+- Add a new navigable action: Add a route constant to `AppRoutes`, handle it in `on_generate_routes.dart`, and call `Navigator.pushNamed` from a button in the anime view/widgets.
+
 ## Navigation
 Navigation uses named routes with a single `onGenerateRoute` function and a central `AppRoutes` registry.
 
