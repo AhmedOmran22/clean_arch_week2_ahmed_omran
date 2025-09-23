@@ -3,8 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_styles.dart';
-import '../../data/models/upgrade_plan_model.dart';
-import '../widgets/upgrade_plan_item_widget.dart';
+import '../widgets/upgrade_plan_list_view_builder.dart';
 
 class UpgradePlanView extends StatelessWidget {
   const UpgradePlanView({super.key});
@@ -37,7 +36,23 @@ class UpgradePlanView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 8.h),
-                  Text("Upgrade Plan", style: AppStyles.style22Bold),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const SizedBox(width: 40),
+                      Text("Upgrade Plan", style: AppStyles.style22Bold),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.white,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Icon(Icons.close),
+                        ),
+                      ),
+                    ],
+                  ),
                   const SizedBox(height: 12),
                   Image.asset(AppAssets.imagesUpgradePlan),
                   Text(
@@ -61,39 +76,6 @@ class UpgradePlanView extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class UpgradePlanItemListViewBuilder extends StatefulWidget {
-  const UpgradePlanItemListViewBuilder({super.key});
-
-  @override
-  State<UpgradePlanItemListViewBuilder> createState() =>
-      _UpgradePlanItemListViewBuilderState();
-}
-
-class _UpgradePlanItemListViewBuilderState
-    extends State<UpgradePlanItemListViewBuilder> {
-  int selectedIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: UpgradePlanModel.upgradePlanDummyList.length,
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {
-            setState(() {
-              selectedIndex = index;
-            });
-          },
-          child: UpgradePlanItemWidget(
-            isSelected: index == selectedIndex,
-            upgradePlanModel: UpgradePlanModel.upgradePlanDummyList[index],
-          ),
-        );
-      },
     );
   }
 }
