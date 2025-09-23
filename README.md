@@ -19,8 +19,13 @@ lib/
 ├── features/
 │   ├── anime/
 │   │   ├── data/
-│   │   │   └── models/
-│   │   │       └── anime_model.dart
+│   │   │   ├── models/
+│   │   │   │   └── anime_model.dart
+│   │   │   ├── repo/
+│   │   │   │   ├── anime_repo.dart
+│   │   │   │   └── anime_repo_impl.dart
+│   │   │   └── services/
+│   │   │       └── anime_local_service.dart
 │   │   └── presentation/
 │   │       ├── views/
 │   │       │   └── anime_details_view.dart
@@ -62,6 +67,13 @@ A self-contained feature demonstrating how presentation and data are organized�
 
 - **data/models/anime_model.dart**
   - Simple model class used to populate UI lists or previews within the app (local/dummy data).
+
+- **data/repo/**
+  - `anime_repo.dart`: Interface/contract the UI depends on.
+  - `anime_repo_impl.dart`: Concrete implementation that delegates to services.
+
+- **data/services/**
+  - `anime_local_service.dart`: Local data source (e.g., returns in-memory/dummy data used in the app now).
 
 - **presentation/views/anime_details_view.dart**
   - The main screen for a single anime. It uses a `SingleChildScrollView` with a vertical `Column` layout and a `bottomNavigationBar` for primary actions.
