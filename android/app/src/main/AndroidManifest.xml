@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="clean_arch_week2_ahmed_omran"
+        android:label="Anime App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
