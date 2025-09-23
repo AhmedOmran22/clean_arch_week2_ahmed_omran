@@ -1,3 +1,4 @@
+import 'package:clean_arch_week2_ahmed_omran/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -12,57 +13,62 @@ class AnimeItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 14),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  animeModel.image,
-                  height: 28.h,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                top: 10,
-                right: 10,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 2,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        size: 16,
-                        Icons.star,
-                        color: AppColors.primaryColor,
-                      ),
-                      Text(
-                        animeModel.rating.toString(),
-                        style: AppStyles.style12Medium,
-                      ),
-                    ],
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.animeDetails);
+        },
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    animeModel.image,
+                    height: 28.h,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(animeModel.name, style: AppStyles.style14Bold),
-          const SizedBox(height: 4),
-          Text(
-            animeModel.kind,
-            style: AppStyles.style12Medium.copyWith(color: Colors.grey),
-          ),
-        ],
+                Positioned(
+                  top: 10,
+                  right: 10,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 2,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          size: 16,
+                          Icons.star,
+                          color: AppColors.primaryColor,
+                        ),
+                        Text(
+                          animeModel.rating.toString(),
+                          style: AppStyles.style12Medium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(animeModel.name, style: AppStyles.style14Bold),
+            const SizedBox(height: 4),
+            Text(
+              animeModel.kind,
+              style: AppStyles.style12Medium.copyWith(color: Colors.grey),
+            ),
+          ],
+        ),
       ),
     );
   }

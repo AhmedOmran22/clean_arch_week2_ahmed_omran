@@ -26,6 +26,9 @@ flutter:
     - assets/images/
     - assets/fonts/
   fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
     - family: Raleway
       fonts:
         - asset: assets/fonts/Raleway-Regular.ttf

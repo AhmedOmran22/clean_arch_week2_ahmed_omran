@@ -4,13 +4,21 @@ class AppAssets {
   
   static const String imagesConan = "assets/images/conan.png";
 
+  static const String imagesDemonLogo = "assets/images/demon_logo.png";
+
   static const String imagesDemonSlayer = "assets/images/demon_slayer.png";
+
+  static const String imagesEye = "assets/images/eye.svg";
 
   static const String imagesFilesFolders = "assets/images/files_folders.png";
 
   static const String imagesFilter = "assets/images/filter.svg";
 
+  static const String imagesFire = "assets/images/fire.svg";
+
   static const String imagesGon = "assets/images/gon.png";
+
+  static const String imagesHands = "assets/images/hands.svg";
 
   static const String imagesHome = "assets/images/home.svg";
 
