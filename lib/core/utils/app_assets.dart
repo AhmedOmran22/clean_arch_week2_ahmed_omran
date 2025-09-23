@@ -24,7 +24,7 @@ class AppAssets {
 
   static const String imagesHunterxhutner = "assets/images/hunterxhutner.png";
 
-  static const String imagesLeftStar = "assets/images/left_star.png";
+  static const String imagesLeftStar = "assets/images/left_star.svg";
 
   static const String imagesNaruto = "assets/images/naruto.png";
 
@@ -32,13 +32,11 @@ class AppAssets {
 
   static const String imagesPngStar = "assets/images/png_star.png";
 
-  static const String imagesRightStar = "assets/images/right_star.png";
+  static const String imagesRightStar = "assets/images/right_star.svg";
 
   static const String imagesSearch = "assets/images/search.svg";
 
   static const String imagesSettings = "assets/images/settings.svg";
-
-  static const String imagesStar = "assets/images/star.svg";
 
   static const String imagesTheStar = "assets/images/the_star.png";
 
