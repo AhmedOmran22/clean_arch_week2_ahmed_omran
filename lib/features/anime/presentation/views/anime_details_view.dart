@@ -5,7 +5,7 @@ import '../widgets/anime_description_widget.dart';
 import '../widgets/anime_icons_with_text_row_widget.dart';
 import '../widgets/anime_image_and_logo_widget.dart';
 import '../widgets/anime_lablels_row_widget.dart';
-import '../widgets/custom_bottom_navigation_barr_button_widget.dart';
+import '../widgets/custom_bottom_navigation_barr_buttons_widget.dart';
 
 class AnimeDetailsView extends StatelessWidget {
   const AnimeDetailsView({super.key});
