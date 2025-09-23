@@ -1,11 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import '../utils/app_styles.dart';
 
-class CustomButtonWidget extends StatelessWidget {
-  const CustomButtonWidget({super.key, required this.label, required this.svgImage, required this.color});
+class CustomActionButtonWidget extends StatelessWidget {
+  const CustomActionButtonWidget({
+    super.key,
+    required this.label,
+    required this.svgImage,
+    required this.color,
+  });
   final String label;
   final String svgImage;
   final Color color;

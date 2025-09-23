@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/widgets/custom_button_widget.dart';
+import '../../../../core/widgets/custom_action_button_widget.dart';
 import '../../../../core/widgets/custom_divider.dart';
 import '../widgets/anime_description_widget.dart';
 import '../widgets/anime_icons_with_text_row_widget.dart';
@@ -44,12 +44,12 @@ class AnimeDetailsView extends StatelessWidget {
           spacing: 16,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButtonWidget(
+            CustomActionButtonWidget(
               label: "Preview",
               svgImage: AppAssets.imagesPerview,
               color: Color(0xff554a71),
             ),
-            CustomButtonWidget(
+            CustomActionButtonWidget(
               label: "Watch Now",
               svgImage: AppAssets.imagesEye,
               color: AppColors.primaryColor,
