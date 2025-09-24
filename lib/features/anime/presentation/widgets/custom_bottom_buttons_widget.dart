@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -6,8 +5,8 @@ import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_action_button_widget.dart';
 
-class CustomBottomNavigationBarButtonsWidget extends StatelessWidget {
-  const CustomBottomNavigationBarButtonsWidget({super.key});
+class CustomBottomButtonsWidget extends StatelessWidget {
+  const CustomBottomButtonsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
