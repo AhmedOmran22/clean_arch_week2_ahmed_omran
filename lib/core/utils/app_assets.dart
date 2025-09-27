@@ -28,6 +28,8 @@ class AppAssets {
 
   static const String imagesNaruto = "assets/images/naruto.png";
 
+  static const String imagesOldPlay = "assets/images/old_play.svg";
+
   static const String imagesPerview = "assets/images/perview.svg";
 
   static const String imagesPngStar = "assets/images/png_star.png";
