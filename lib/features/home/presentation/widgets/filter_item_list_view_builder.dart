@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
+import '../cubits/filter_cubit.dart';
 import 'filter_item_widget.dart';
 
-class FilterItemListViewBuilder extends StatefulWidget {
+class FilterItemListViewBuilder extends StatelessWidget {
   const FilterItemListViewBuilder({super.key});
 
   @override
-  State<FilterItemListViewBuilder> createState() =>
-      _FilterItemListViewBuilderState();
-}
-
-class _FilterItemListViewBuilderState extends State<FilterItemListViewBuilder> {
-  int selectedIndex = 0;
-  List<String> filterItems = [
-    "All",
-    "Popular",
-    "Trending",
-    "New Releases",
-    "Top Rated",
-  ];
-  @override
   Widget build(BuildContext context) {
+    final List<String> filterItems = [
+      "All",
+      "Popular",
+      "Trending",
+      "New Releases",
+      "Top Rated",
+    ];
+
     return SizedBox(
       height: 3.2.h,
       width: 95.w,
@@ -30,16 +26,17 @@ class _FilterItemListViewBuilderState extends State<FilterItemListViewBuilder> {
         scrollDirection: Axis.horizontal,
         itemCount: filterItems.length,
         itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
+          return BlocSelector<FilterCubit, int, bool>(
+            selector: (selectedIndex) => selectedIndex == index,
+            builder: (context, isSelected) {
+              return InkWell(
+                onTap: () => context.read<FilterCubit>().selectFilter(index),
+                child: FilterItemWidget(
+                  title: filterItems[index],
+                  isSelected: isSelected,
+                ),
+              );
             },
-            child: FilterItemWidget(
-              title: filterItems[index],
-              isSelected: index == selectedIndex,
-            ),
           );
         },
       ),

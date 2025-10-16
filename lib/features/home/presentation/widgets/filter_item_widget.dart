@@ -1,5 +1,5 @@
+// filter_item_widget.dart
 import 'package:flutter/material.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
@@ -9,8 +9,10 @@ class FilterItemWidget extends StatelessWidget {
     required this.isSelected,
     required this.title,
   });
+
   final bool isSelected;
   final String title;
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../anime/presentation/widgets/anime_list_view_builder.dart';
 import '../../../top_characters/presentation/widgets/top_characters_list_view_builder.dart';
+import '../cubits/filter_cubit.dart';
 import '../widgets/background_star_image.dart';
 import '../widgets/filter_item_list_view_builder.dart';
 
@@ -32,7 +34,10 @@ class HomeView extends StatelessWidget {
                         style: AppStyles.style22Bold,
                       ),
                       const SizedBox(height: 16),
-                      const FilterItemListViewBuilder(),
+                      BlocProvider(
+                        create: (context) => FilterCubit(),
+                        child: const FilterItemListViewBuilder(),
+                      ),
                       const SizedBox(height: 20),
                       const AnimeListViewBuilder(),
                     ],
