@@ -6,18 +6,10 @@ import '../cubits/filter_cubit.dart';
 import 'filter_item_widget.dart';
 
 class FilterItemListViewBuilder extends StatelessWidget {
-  const FilterItemListViewBuilder({super.key});
-
+  const FilterItemListViewBuilder({super.key, required this.filterItems});
+  final List<String> filterItems;
   @override
   Widget build(BuildContext context) {
-    final List<String> filterItems = [
-      "All",
-      "Popular",
-      "Trending",
-      "New Releases",
-      "Top Rated",
-    ];
-
     return SizedBox(
       height: 3.2.h,
       width: 95.w,

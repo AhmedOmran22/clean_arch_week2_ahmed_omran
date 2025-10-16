@@ -41,7 +41,15 @@ class HomeView extends StatelessWidget {
                       const SizedBox(height: 20),
                       BlocProvider(
                         create: (context) => FilterCubit(),
-                        child: const FilterItemListViewBuilder(),
+                        child: const FilterItemListViewBuilder(
+                          filterItems: [
+                            "All",
+                            "Popular",
+                            "Trending",
+                            "New Releases",
+                            "Top Rated",
+                          ],
+                        ),
                       ),
                       const SizedBox(height: 20),
                       const AnimeListViewBuilder(),
