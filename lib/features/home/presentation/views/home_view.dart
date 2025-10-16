@@ -7,6 +7,7 @@ import '../../../top_characters/presentation/widgets/top_characters_list_view_bu
 import '../cubits/filter_cubit.dart';
 import '../widgets/background_star_image.dart';
 import '../widgets/filter_item_list_view_builder.dart';
+import '../widgets/filter_value_list_view_builder.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -34,6 +35,10 @@ class HomeView extends StatelessWidget {
                         style: AppStyles.style22Bold,
                       ),
                       const SizedBox(height: 16),
+                      FilterValueListViewBuilder(
+                        selectedIndexNotifier: ValueNotifier<int>(0),
+                      ),
+                      const SizedBox(height: 20),
                       BlocProvider(
                         create: (context) => FilterCubit(),
                         child: const FilterItemListViewBuilder(),
